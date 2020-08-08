@@ -17,7 +17,6 @@ class Storage {
         items.splice(i, 1);
       }
     }
-    console.log(" Видалити не можливо! Такий предмет відсутній.");
   }
 }
 
