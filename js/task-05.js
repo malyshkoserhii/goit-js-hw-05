@@ -1,16 +1,14 @@
 class Car {
   static getSpecs(car) {
-    console.log(
-      `maxSpeed: ${mustang.maxSpeed}, speed: ${mustang.speed}, isOn: ${mustang.isOn}, distance: ${mustang.distance}, price: ${mustang.price}`,
-    );
+    console.log(car);
   }
 
-  constructor({ speed = 0, price, maxSpeed, isOn = false, distance = 0 }) {
-    this.speed = speed;
-    this._price = price;
+  constructor({ maxSpeed, price }) {
     this.maxSpeed = maxSpeed;
-    this.isOn = isOn;
-    this.distance = distance;
+    this.speed = 0;
+    this.isOn = false;
+    this.distance = 0;
+    this._price = price;
   }
 
   get price() {
@@ -43,7 +41,7 @@ class Car {
   }
 
   drive(hours) {
-    if (this.isOn === true) {
+    if (this.isOn) {
       const currentDistance = hours * this.speed;
       this.distance += currentDistance;
     }
